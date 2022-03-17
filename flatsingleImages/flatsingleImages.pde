@@ -1,14 +1,27 @@
 //Global Variables
+float imageX, imageY, imageWidth, imageHeight, imageWidthRatio, imageHeightRatio;
+float largerDimension, smallerDimension;
 PImage pic;
 //
-fullScreen();
-//size(600, 300);
+//fullScreen();
+size(960, 569);
+if (width >= height) { 
+  largerDimension = width; 
+  smallerDimension = height;
+} else { 
+  largerDimension = height;
+  smallerDimension = width;
+}
+println (largerDimension, smallerDimension);
 //Population
-imageX = Width*0;
-imageY = Height*0;
-imageWidth = Width;
-imageHeight = Height;
-pic = loadImage("");Dimensions
+pic = loadImage("694829.png"); //Dimensions: 1920,1139
+imageWidthRatio = largerDimension / largerDimension; //similar to style="width:100%"
+imageHeightRatio = smallerDimension / smallerDimension; //Smaller number
+println(imageWidthRatio, imageHeightRatio);
+imageX = width*0;
+imageY = height*0;
+imageWidth = width*imageWidthRatio;
+imageHeight = height*imageHeightRatio;
 //
 rect(imageX, imageY, imageWidth, imageHeight);
-//image()
+image(pic, imageX, imageY, imageWidth, imageHeight);
