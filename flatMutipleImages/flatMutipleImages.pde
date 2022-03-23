@@ -4,7 +4,7 @@ float rectXPic2, rectYPic2, rectWidthPic2, rectHeightPic2;
 PImage pic1, pic2;
 //
 //Geometry: display and orientation (landscpae, portrait, and square)
-size(1440, 1000); //fullScreen(); displayWidth, displayHeight
+size(1440, 810); //fullScreen(); displayWidth, displayHeight
 //Landsacpe Presentation, not square or protrait
 //
 //Populating Variables
@@ -55,14 +55,14 @@ println(imageWidthRatioPic1, imageHeightRatioPic1, imageWidthRatioPic2, imageHei
 // **CONTINUE HERE: use ratios to change the image width and height properties
 // **See below to Specific Image Properties of Image and Rectangle Variables
 //
-rectXPic1 = width*1/4;
+rectXPic1 = width*0.25;
 rectYPic1 = height*0;
-rectWidthPic1 = width*0.5;
+rectWidthPic1 = width*0.444;
 rectHeightPic1 = height*1/2;
-rectXPic2 = width*1/8;
+rectXPic2 = width*3/8;
 rectYPic2 = height*1/2;
-rectWidthPic2 = width*6/8; // 1/8 leftover, or 7/8 used
-rectHeightPic2 = height*1/2;
+rectWidthPic2 = width*0.193; // 1/8 leftover, or 7/8 used
+rectHeightPic2 = height*0.5;
 //
 //Rectangle Layout & Image Printing on Canvas
 rect(rectXPic1, rectYPic1, rectWidthPic1, rectHeightPic1); //Image 1, landscape presentation
@@ -79,6 +79,22 @@ pic2WidthAdjusted = rectWidthPic2 * imageWidthRatioPic2;
 pic2HeightAdjusted = rectHeightPic2 * imageHeightRatioPic2;
 println (pic1Width, pic1Height, pic2Width, pic2Height);
 println (pic1WidthAdjusted, pic1HeightAdjusted, pic2WidthAdjusted, pic2HeightAdjusted);
+//
+//
+//Rectangle Layout & Image Printing on Canvas
+color red=#FF0000;
+fill(red);
+//rect(rectXPic1, rectYPic1, rectWidthPic1, rectHeightPic1); //Image 1, landscape presentation
+//rect(rectXPic2, rectYPic2, rectWidthPic2, rectHeightPic2); //Image 2, landscape presentation 
+//Image using Rect() Variables
+//image(pic1, rectXPic1, rectYPic1, rectWidthPic1, rectHeightPic1);
+//image(pic2, rectXPic2, rectYPic2, rectWidthPic2, rectHeightPic2);
+//Change the Rect() Variables to Aspect Ratio
+//image(pic1, rectXPic1, rectYPic1, pic1WidthAdjusted, pic1HeightAdjusted);
+//println ("Image one looks good, put some text underneath to fill in the space."); //Great Design Change for Aspect Ratio
+//image(pic2, rectXPic2, rectYPic2, pic2WidthAdjusted, pic2HeightAdjusted);
+//Center image in rect(), pic2, by changing the yRect() value
+//image(pic2, rectXPic2, rectYPic2+(rectYPic2*1/5), pic2WidthAdjusted, pic2HeightAdjusted);
 //End Program
 
 
