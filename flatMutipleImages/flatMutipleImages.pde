@@ -3,19 +3,20 @@ float rectXPic1, rectYPic1, rectWidthPic1, rectHeightPic1;
 float rectXPic2, rectYPic2, rectWidthPic2, rectHeightPic2;
 PImage pic1, pic2;
 //
-//Geometry
+//Geometry: display and orientation (landscpae, portrait, and square)
 size(1440, 1000); //fullScreen(); displayWidth, displayHeight
 //Landsacpe Presentation, not square or protrait
 //
 //Populating Variables
 pic1 = loadImage("694829.png"); //Dimensions width:1920, height:1139
-pic2 = loadImage("darling_in_the_franxx_collection__ichigo_by_jabekun_dcafrtg-fullview.jpg"); //Dimensions width:1280, height:1656
+int pic1Width = 960;
+int pic1Height = 570;
+pic2 = loadImage("darling_in_the_franxx_collection__ichigo_by_jabekun_dcafrtg-fullview.jpg"); 
+int pic2Width = 640;
+int pic2Height = 828;
+//Dimensions width:1280, height:1656
 //
 //Aspect Ration Calculations
-int pic1Width = 640; //NOTE: mine not yours
-int pic1Height = 380; //NOTE: mine not yours
-int pic2Width = 200; //NOTE: mine not yours
-int pic2Height = 200; //NOTE: mine not yours
 int largerPic1Dimension, smallerPic1Dimension, largerPic2Dimension, smallerPic2Dimension;
 float imageWidthRatioPic1=0.0, imageHeightRatioPic1=0.0, imageWidthRatioPic2=0.0, imageHeightRatioPic2=0.0; 
 Boolean widthPic1Larger=false, heightPic1Larger=false, widthPic2Larger=false, heightPic2Larger=false;
@@ -56,11 +57,11 @@ println(imageWidthRatioPic1, imageHeightRatioPic1, imageWidthRatioPic2, imageHei
 //
 rectXPic1 = width*1/4;
 rectYPic1 = height*0;
-rectWidthPic1 = width*1/2;
+rectWidthPic1 = width*0.5;
 rectHeightPic1 = height*1/2;
 rectXPic2 = width*1/8;
 rectYPic2 = height*1/2;
-rectWidthPic2 = width*6/8;
+rectWidthPic2 = width*6/8; // 1/8 leftover, or 7/8 used
 rectHeightPic2 = height*1/2;
 //
 //Rectangle Layout & Image Printing on Canvas
@@ -69,6 +70,15 @@ rect(rectXPic2, rectYPic2, rectWidthPic2, rectHeightPic2); //Image 2, landscape 
 image(pic1, rectXPic1, rectYPic1, rectWidthPic1, rectHeightPic1);
 image(pic2, rectXPic2, rectYPic2, rectWidthPic2, rectHeightPic2);
 //
+// Final Aspect Ratio Calculations
+float pic1WidthAdjusted, pic1HeightAdjusted, pic2WidthAdjusted, pic2HeightAdjusted;
+//Adjusted values based on rect() variables not Image values
+pic1WidthAdjusted = rectWidthPic1 * imageWidthRatioPic1;
+pic1HeightAdjusted = rectHeightPic1 * imageHeightRatioPic1;
+pic2WidthAdjusted = rectWidthPic2 * imageWidthRatioPic2;
+pic2HeightAdjusted = rectHeightPic2 * imageHeightRatioPic2;
+println (pic1Width, pic1Height, pic2Width, pic2Height);
+println (pic1WidthAdjusted, pic1HeightAdjusted, pic2WidthAdjusted, pic2HeightAdjusted);
 //End Program
 
 
