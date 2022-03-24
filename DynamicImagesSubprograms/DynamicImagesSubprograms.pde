@@ -17,13 +17,14 @@ void setup()
 //
 void draw()
 {
-  imageDraw();
+
 }//End draw
 //
 void keyPressed() {
 }//End keyPressed
 //
 void mousePressed() {
+    imageDraw();
 }//End mousePressed
 //
 //End Program
